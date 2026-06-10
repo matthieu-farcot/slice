@@ -6,6 +6,8 @@ Experience en réalité augmentée
 
 Ce projet propose une expérience de réalité augmentée (AR) accessible via un navigateur mobile, permettant d'afficher et de contrôler plusieurs témoignages vidéo lorsque l'utilisateur scanne un flyer dédié.
 
+<img src="./ressources/slice.jpg">
+
 Technologies utilisées
 
 ## 1. A-Frame (1.7.0)
