@@ -6,7 +6,7 @@ Experience en réalité augmentée
 
 Ce projet propose une expérience de réalité augmentée (AR) accessible via un navigateur mobile, permettant d'afficher et de contrôler plusieurs témoignages vidéo lorsque l'utilisateur scanne un flyer dédié.
 
-<img src="./ressources/slice.jpg">
+<img src="./ressources/slice.jpg" style="width: 55">
 
 Technologies utilisées
 
