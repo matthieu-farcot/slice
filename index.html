@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+  </head>
+
+  <body>
+    <a-scene 
+      id="arScene"
+      mindar-image="imageTargetSrc: ./ressources/slice.mind; filterMinCF:10000000; filterBeta:1000; warmupTolerance:0; missTolerance:500;" 
+      color-space="sRGB"
+      renderer="colorManagement:true,physicallyCorrectLights,antialias:true"
+      vr-mode-ui="enabled:false">
+
+      <a-assets>
+        <a-image id="poster" src="./ressources/slice.jpg"></a-image>
+        <a-gltf-model id="verin" src="ressources/verin.glb""></a-gltf-model>
+      </a-assets>
+
+      <a-camera position="0 0 0" look-controls="enabled:false"></a-camera>
+
+      <a-entity mindar-image-target="targetIndex:0">
+        <a-plane id="fond" src="#poster" position="-0.32722 0.48861 0.0026" height="0.15" width="0.25" rotation="0 0 5" scale="1.5 1.5 1.5" material="blending:normal"></a-plane>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
