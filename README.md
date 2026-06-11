@@ -4,7 +4,7 @@ Experience en réalité augmentée
 
 (C) 2026 M. Farcot
 
-Ce projet propose une expérience de réalité augmentée (AR) accessible via un navigateur mobile, permettant d'afficher et de contrôler plusieurs témoignages vidéo lorsque l'utilisateur scanne un flyer dédié.
+Ce projet propose une expérience de réalité augmentée (AR) accessible via un navigateur mobile, permettant d'afficher un plan de coupe et de visualiser un objet 3D en rapport.
 
 <img src="./ressources/slice.jpg" style="width: 25%">
 
