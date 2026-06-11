@@ -1,79 +1,127 @@
-# Slice Slice Baby
+# Slice - Expérience en Réalité Augmentée
 
-Experience en réalité augmentée
+Experience en réalité augmentée interactive basée sur la reconnaissance d'image.
 
-(C) 2026 M. Farcot
+> *Projet imaginé, encadré et co-développé par Matthieu Farcot*  
+> © 2026 Lycée Louis de Cormontaigne -- Metz
 
-Ce projet propose une expérience de réalité augmentée (AR) accessible via un navigateur mobile, permettant d'afficher un plan de coupe et de visualiser un objet 3D en rapport.
+## À propos du projet
 
-<img src="./ressources/slice.jpg" style="width: 25%">
+**Slice** est une application de réalité augmentée accessible via navigateur web qui permet de visualiser une coupe transversale animée d'un composant mécanique en 3D. En scannant une image cible, l'utilisateur découvre des modèles 3D interactifs avec animations fluides.
 
-Technologies utilisées
+![Slice](./ressources/slice.jpg)
 
-## 1. A-Frame (1.7.0)
+## Caractéristiques principales
 
-Framework WebVR/AR pour créer des scènes 3D en HTML.
-Utilisé pour :
+- 🔍 **Reconnaissance d'image** : Détection automatique et robuste de la cible AR via MindAR
+- 🎨 **Visualisation 3D** : Affichage de modèles GLTF en réalité augmentée directement sur la cible
+- ⚙️ **Animation mécanique** : Piston animé avec mouvement réaliste et boucle infinie
+- 📱 **Compatible mobile** : Fonctionne sur iOS, Android et ordinateurs
+- 🌐 **Accès web** : Aucune installation requise, fonctionnement directement depuis un navigateur
 
-la scène AR
-la caméra
-les plans 3D (a-plane)
-la gestion des assets
-CDN : https://aframe.io/releases/1.7.0/aframe.min.js
+## Technologies utilisées
 
-## 2. MindAR (mindar-image-aframe) -- v1.2.5
+### 1. A-Frame (v1.6.0)
+Framework WebGL/WebVR pour la création de scènes 3D et AR en HTML.
+- **Utilisation** : Scène AR, caméra, entités 3D, gestion des assets
+- **CDN** : https://aframe.io/releases/1.6.0/aframe.min.js
 
-Bibliothèque de réalité augmentée pour la reconnaissance d'images.
-Utilisée pour :
+### 2. MindAR (v1.2.5)
+Bibliothèque de reconnaissance d'images pour la réalité augmentée.
+- **Utilisation** : Détection de l'image cible, suivi spatial, affichage des objets 3D
+- **CDN** : https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js
 
-détecter le poster
-afficher les objets 3D
-gérer targetFound / targetLost
-CDN : https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js
+### 3. HTML5 / CSS
+Structure et mise en page responsive compatible avec tous les appareils.
 
-## 3. HTML5 / CSS3
+## Structure du projet
 
-Utilisés pour :
+```
+slice/
+├── index.html              # Fichier principal de l'application
+└── ressources/
+    ├── slice.mind          # Fichier de reconnaissance MindAR
+    ├── slice.jpg           # Image cible pour détecter l'AR
+    └── piston.glb          # Modèle 3D du piston
+```
 
-la structure de la page
-le design des boutons, overlays et modals
-l'integration des éléments 3D
+## Installation et utilisation
 
-## 4. JavaScript (Vanilla)
+### Prérequis
 
-Utilisé pour :
+- Navigateur web moderne supportant WebGL (Chrome, Firefox, Edge, Safari)
+- Caméra fonctionnelle (ordinateur, smartphone, tablette)
+- Accès à Internet pour charger les CDN
 
-la gestion du changement de vidéos
-les événements AR
-la lecture/pause automatique
-le modal d'informations
-la mise à jour des boutons et indicateurs
+### Démarrage
 
-## 5. Fichiers et assets
+1. **Clonez le repository** :
+```bash
+git clone https://github.com/matthieu-farcot/slice.git
+cd slice
+```
 
-Fichiers 3D 
-Image : Logo-simplifie-NB.jpg
-Cible AR : targets-JPO.mind
-Compatibilité mobile
+2. **Ouvrez dans un navigateur** :
+   - Directement : ouvrir `index.html` dans votre navigateur
+   - Ou via un serveur local (recommandé pour une meilleure stabilité)
 
-Fonctionne sur Chrome Android, Safari iOS (playsinline), et nécessite un serveur local ou HTTPS. Testé sur une variété de mobiles (selon les possessions des élèves qui passaient devant le bureau) et de systèmes informatiques.
+3. **Lancez l'expérience** :
+   - Pointez votre caméra vers l'image cible (`slice.jpg`)
+   - Visualisez la coupe 3D animée en réalité augmentée
 
-Structure du projet
+## Fonctionnement technique
 
-/assets
-/films
-/object
-slice.mind
-index.html
+### Scène AR
+L'application crée une scène A-Frame avec suivi d'image MindAR qui :
+- Détecte l'image cible en temps réel
+- Ancre les éléments 3D sur la cible détectée
+- Affiche les objets 3D positionnés correctement
 
-Fonctionnement
+### Éléments affichés
+- **Image de référence** : Coupe du composant avec transparence (opacité 70%)
+- **Piston principal** : Modèle GLTF animé avec mouvement vertical
+- **Vérins** : Deux modèles miroir avec animation de rotation
 
-Scan du Poster.
-Détection de la cible et affichage de l'animation 3D.
+### Animations
+- **Piston** : Animation linéaire de 2 secondes, boucle alternative (haut/bas)
+- **Vérins** : Rotation coordonnée avec le piston
 
-Crédits
+## Configuration personnalisée
 
-Source poster : Camexia / Art et Métiers ParisTech
+Vous pouvez ajuster les paramètres AR dans le composant `mindar-image` :
 
-Projet imaginé, encadré et co-développé par Matthieu Farcot
-(c) Lycée Louis de Cormontaigne -- Metz, 2026
+```html
+mindar-image="imageTargetSrc: ./ressources/slice.mind; 
+              filterMinCF:10000000; 
+              filterBeta:1000; 
+              warmupTolerance:0; 
+              missTolerance:500;"
+```
+
+## Compatibilité
+
+| Plateforme | Navigateur | Support |
+|-----------|-----------|---------|
+| Android | Chrome | ✅ Excellent |
+| iOS | Safari 14+ | ✅ Bon |
+| Desktop | Chrome/Firefox | ✅ Bon |
+| Desktop | Edge | ✅ Bon |
+
+**Note** : Pour iOS, utilisez Safari et activez le mode "playsinline" pour les vidéos.
+
+## Crédits et sources
+
+- Source poster : Camexia / Art et Métiers ParisTech
+- Framework A-Frame : Mozilla
+- Bibliothèque MindAR : Yichun Ding
+- Modèles 3D et design : Matthieu Farcot
+
+## Licence
+
+À spécifier
+
+---
+
+**Auteur** : [Matthieu Farcot](https://github.com/matthieu-farcot)  
+**Établissement** : Lycée Louis de Cormontaigne, Metz  
+**Année** : 2026
