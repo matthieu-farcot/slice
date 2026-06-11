@@ -13,11 +13,11 @@ Experience en réalité augmentée interactive basée sur la reconnaissance d'im
 
 ## Caractéristiques principales
 
-- 🔍 **Reconnaissance d'image** : Détection automatique et robuste de la cible AR via MindAR
-- 🎨 **Visualisation 3D** : Affichage de modèles GLTF en réalité augmentée directement sur la cible
-- ⚙️ **Animation mécanique** : Piston animé avec mouvement réaliste et boucle infinie
-- 📱 **Compatible mobile** : Fonctionne sur iOS, Android et ordinateurs
-- 🌐 **Accès web** : Aucune installation requise, fonctionnement directement depuis un navigateur
+-  **Reconnaissance d'image** : Détection automatique et robuste de la cible AR via MindAR
+-  **Visualisation 3D** : Affichage de modèles GLTF en réalité augmentée directement sur la cible
+-  **Animation mécanique** : Piston animé avec mouvement réaliste et boucle infinie
+-  **Compatible mobile** : Fonctionne sur iOS, Android et ordinateurs
+-  **Accès web** : Aucune installation requise, fonctionnement directement depuis un navigateur
 
 ## Technologies utilisées
 
@@ -102,10 +102,11 @@ mindar-image="imageTargetSrc: ./ressources/slice.mind;
 
 | Plateforme | Navigateur | Support |
 |-----------|-----------|---------|
-| Android | Chrome | ✅ Excellent |
-| iOS | Safari 14+ | ✅ Bon |
-| Desktop | Chrome/Firefox | ✅ Bon |
-| Desktop | Edge | ✅ Bon |
+| Android | Chrome | Excellent |
+| All | Brave | Exceptionnel |
+| iOS | Safari 14+ | Wow |
+| Desktop | Firefox | Miam |
+| Desktop | Edge | Lol. Qui utilise Edge? |
 
 **Note** : Pour iOS, utilisez Safari et activez le mode "playsinline" pour les vidéos.
 
