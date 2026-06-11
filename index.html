@@ -22,7 +22,15 @@
       <a-camera position="0 0 0" look-controls="enabled:false"></a-camera>
 
       <a-entity mindar-image-target="targetIndex:0">
-        <a-plane id="fond" src="#poster" position="0 0 0" rotation="0 0 0" scale="2 2 2" material="blending:normal"></a-plane>
+      <a-entity id="CoupeAA" position="0 1.75034 -0.60385">
+        <a-image src="#poster" scale="0.86641 1.17977 1" position="-0.00487 -0.00476 0"></a-image>
+        <a-entity>
+        <a-entity id="pistond" gltf-model="#verin" position="-0.23316 0.03476 -0.00158" rotation="0 -90.00021045914971 -90.00021045914971" scale="0.09 0.09 0.09" visible="false"></a-entity>
+        <a-entity id="pistong" gltf-model="#verin" position="-0.17018 0.035 -0.002" rotation="0 90.00021045914971 90.00021045914971" scale="0.09 0.09 0.09" visible="false"></a-entity>
+      </a-entity>
+        </a-entity>
+      
+      
       </a-entity>
     </a-scene>
   </body>
