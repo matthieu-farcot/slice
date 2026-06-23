@@ -9,7 +9,7 @@ Experience en réalité augmentée interactive basée sur la reconnaissance d'im
 
 **Slice** est une application de réalité augmentée accessible via navigateur web qui permet de visualiser une coupe transversale animée d'un composant mécanique en 3D. En scannant une image cible, l'utilisateur découvre des modèles 3D interactifs avec animations fluides.
 
-![Slice](./ressources/slice.jpg)
+![Slice](./ressources/slice.png)
 
 ## Caractéristiques principales
 
