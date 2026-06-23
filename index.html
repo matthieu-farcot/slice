@@ -28,9 +28,20 @@
 <a-entity id="CoupeAA" position="0.17116 -0.21646 -0.69986" scale="1 1 1">
  <a-image src="#poster" scale="1 2 1" position="0 0 0" material="opacity: 0.7"></a-image>
   
-     <a-entity id="piston" position="0 0 0" animation="property: position; to: 0 -0.26 0; dur: 2000; easing: linear; loop: true; dir: alternate"> 
-        <a-entity id="pistond" gltf-model="#verin" position="-0.23316 0.2834 -0.00158" rotation="0 -90.00021045914971 0" scale="0.09 0.09 0.09" animation="property: rotation; to: 0 -90.00021045914971 -90.00021045914971; dur: 2000; easing: linear; loop: true; dir: alternate" ></a-entity>
-        <a-entity id="pistong" gltf-model="#verin" position="-0.17018 0.2834 -0.002" rotation="0 90.00021045914971 0" scale="0.09 0.09 0.09" animation="property: rotation; to: 0 90.00021045914971 90.00021045914971; dur: 2000; easing: linear; loop: true; dir: alternate"></a-entity>
+     <a-entity id="piston-top" position="0 0 0" animation="property: position; to: 0 -0.26 0; dur: 2000; easing: linear; loop: true; dir: alternate" scale="1.1 1.1 1.1"> 
+        <a-entity id="pistondstart" gltf-model="./ressources/piston.glb" position="-0.23316 0.2834 -0.00158" rotation="0 -90.00021045914971 0" scale="0.09 0.09 0.09" ></a-entity>
+        <a-entity id="pistongstart" gltf-model="./ressources/piston.glb" position="-0.17018 0.2834 -0.002" rotation="0 90.00021045914971 0" scale="0.09 0.09 0.09" ></a-entity>
+               <a-entity id="pistondend" gltf-model="./ressources/piston.glb" position="-0.23316 0.2834 -0.00158" rotation="0 -90.00021045914971 0" scale="0.09 0.09 0.09" ></a-entity>
+        <a-entity id="pistongend" gltf-model="./ressources/piston.glb" position="-0.17018 0.2834 -0.002" rotation="0 90.00021045914971 0" scale="0.09 0.09 0.09" ></a-entity>
+      </a-entity>
+
+            <a-entity id="piston-left" position="0 0 0" animation="property: position; to: 0 -0.26 0; dur: 2000; easing: linear; loop: true; dir: alternate" scale="1.1 1.1 1.1"> 
+        <a-entity id="pistondstart" gltf-model="./ressources/piston.glb" position="-0.23316 0.2834 -0.00158" rotation="0 -90.00021045914971 0" scale="0.09 0.09 0.09" ></a-entity>
+        <a-entity id="pistongstart" gltf-model="./ressources/piston.glb" position="-0.17018 0.2834 -0.002" rotation="0 90.00021045914971 0" scale="0.09 0.09 0.09" ></a-entity>
+        <a-entity id="pistondend" gltf-model="#verin" position="-0.23316 0.2834 -0.00158" rotation="0 -90.00021045914971 0" scale="0.09 0.09 0.09" animation="property: rotation; to: 0 -90.00021045914971 -90.00021045914971; dur: 2000; easing: linear; loop: true; dir: alternate" ></a-entity>
+        <a-entity id="pistongend" gltf-model="#verin" position="-0.17018 0.2834 -0.002" rotation="0 90.00021045914971 0" scale="0.09 0.09 0.09" animation="property: rotation; to: 0 90.00021045914971 90.00021045914971; dur: 2000; easing: linear; loop: true; dir: alternate"></a-entity>
+      </a-entity>
+
       </a-entity>
         </a-entity>
         </a-entity>
